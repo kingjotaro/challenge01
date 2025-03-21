@@ -20,10 +20,10 @@ const clearString = (str) => {
 };
 
 // function that returns the similarity percentage of two strings, using the 'string-similarity' lib. It uses the Sorensen-Dice similarity coefficient, which is based on the count of bigrams (pairs of consecutive characters).
-const getStringSimilarity = (str1, str2) => {
+const getStringSimilarity = (str1, str2) =>
   Number((stringSimilarity.compareTwoStrings(str1, str2) * 100).toFixed(2));
-};
 
+// function that returns the similarity percentage of two keywords for more specific comparation
 const getKeywordSimilarity = (str1, str2) => {
   const str1WithoutUnits = removeUnits(clearString(str1).replace(/\d+/g, ''));
   const str2WithoutUnits = removeUnits(clearString(str2).replace(/\d+/g, ''));

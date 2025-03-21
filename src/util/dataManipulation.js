@@ -27,6 +27,23 @@ const getUniqueSortedProducts = (data) => {
   return Array.from(new Set([...data.map((product) => product.title)].sort()));
 };
 
+const writeFile = (file) => {
+  const outputDir = path.resolve(__dirname, '../output');
+
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir);
+  }
+
+  const outputPath = path.resolve(__dirname, '../output/output.json');
+
+  try {
+    fs.writeFileSync(outputPath, JSON.stringify(file, null, 2), 'utf8');
+    console.log(`Arquivo escrito em: ${outputPath}`);
+  } catch (e) {
+    console.log(`Erro ao escrever o arquivo: ${e}`);
+  }
+};
+
 //function that creates and return a list of product categories, with each item containing its name, price, and the supermarket it belongs to.
 const categorizeProducts = (data, uniqueSortedProducts) => {
   let final = [];
@@ -93,4 +110,5 @@ module.exports = {
   clearString,
   removeUnits,
   categorizeProducts,
+  writeFile,
 };

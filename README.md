@@ -1,6 +1,6 @@
 # Desafio Webscraping
 
-### O código das soluções encontram-se em arquivos em '/src/utils'
+### O código das soluções encontram-se em arquivos em '/src/util'
 
 ### As funções estão sendo chamadas no script principal '/src/script.js'
 
